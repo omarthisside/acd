@@ -134,7 +134,7 @@ background: #AB825D !important;
 }
 
 
-@media(min-width:1280px){
+@media(min-width:1024px){
   .mobile-nav{
     display: block !important;
   }

@@ -49,7 +49,7 @@ export default function Home() {
             />
           </div>
 
-          <header className="lg:w-1/2 lg:justify-end lg:pr-4 lg:py-4  transition-all ease-in-out">
+          <header className="lg:w-1/2 lg:justify-end lg:pr-4 lg:py-4  transition-all ease-in-out px-2 lg:px-0">
             <div className="flex justify-between items-center lg:items-end lg:justify-end ">
               <div className="lg:hidden">
                 <Image src={logo} alt="Advanced Construction Design Logo" />
