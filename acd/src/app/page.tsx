@@ -4,7 +4,8 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Image from "next/image";
 import logo from "./images/logo.png";
 import desktopLogo from "./images/desktop-logo.png";
-import menuIcon from "./images/menu-icon.png";
+import menuIcon from "./images/menu-icon.svg";
+import closeIcon from "../app/images/close-icon.svg";
 import aboutImg from "../app/images/about-img.jpg";
 import instaIcon from "../app/images/instagram.svg";
 import twitterIcon from "../app/images/twitter.svg";
@@ -27,42 +28,17 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 export default function Home() {
-  const [nav, setNav] = useState(false);
+  // const [nav, setNav] = useState(false);
 
-  const handleNav = () => {
-    setNav(!nav);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+
+  
+
+  // const handleNav = () => {
+  //   setNav(!nav);
+  // };
   return (
     <>
-      {/* <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black">
-        <h1 className="w-full text-3xl font-bold text-[#061712]">REACT.</h1>
-        <ul className="hidden md:flex">
-          <li className="p-4">Home</li>
-          <li className="p-4">Company</li>
-          <li className="p-4">Resources</li>
-          <li className="p-4">About</li>
-          <li className="p-4">Contact</li>
-        </ul>
-        <div onClick={handleNav} className="block md:hidden">
-          {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
-        </div>
-        <ul
-          className={
-            nav
-              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
-              : "ease-in-out duration-500 fixed left-[-100%]"
-          }
-        >
-          <h1 className="w-full text-3xl font-bold text-[#061410] m-4">
-            REACT.
-          </h1>
-          <li className="p-4 border-b border-gray-600">Home</li>
-          <li className="p-4 border-b border-gray-600">Company</li>
-          <li className="p-4 border-b border-gray-600">Resources</li>
-          <li className="p-4 border-b border-gray-600">About</li>
-          <li className="p-4">Contact</li>
-        </ul>
-      </div> */}
       <section className="h-[100vh] relative text-center flex">
         <nav className="lg:flex lg:justify-between w-[100%] absolute top-0 z-40  ">
           <div className="hidden lg:block  lg:pl-[60px] pt-3 ">
@@ -73,14 +49,38 @@ export default function Home() {
             />
           </div>
 
-          <header className="flex justify-between items-center lg:w-1/2 lg:justify-end lg:pr-4">
-            <div className="lg:hidden">
-              <Image src={logo} alt="Advanced Construction Design Logo" />
+          <header className="lg:w-1/2 lg:justify-end lg:pr-4 lg:py-4  transition-all ease-in-out">
+            <div className="flex justify-between items-center lg:items-end lg:justify-end ">
+              <div className="lg:hidden">
+                <Image src={logo} alt="Advanced Construction Design Logo" />
+              </div>
+
+              <div className="py-4 px-2 lg:py-0 lg:px-0 lg:hidden">
+                
+                   <Image src={isOpen? closeIcon : menuIcon} alt="Menu Icon" onClick={() => { console.log('Clicked'); setIsOpen(!isOpen)}} />
+              
+               
+              </div>
+            </div>
+            
+            <div style={{ display: isOpen ? 'block' : 'none'}} className="px-[30px] pb-[50px] mt-4 lg:mt-0 lg:pb-0 lg:px-0 lg:pr-6 lg:h-[100%]  lg:block mobile-nav">
+              <ul className="flex flex-col justify-center lg:justify-end items-center text-white space-y-10 children:max-w-[120px] lg:flex-row lg:space-y-0 lg:space-x-8 lg:h-[100%] text-[18px]">
+                <li>
+                    <a href="">About Us</a>
+                </li>
+                <li>
+                    <a href="">Services</a>
+                </li>
+                <li>
+                    <a href="">Testimonials</a>
+                </li>
+                <li className="px-6 py-2 text-[#AB825D] bg-white">
+                    <a href="">Call Us</a>
+                </li>
+              </ul>
             </div>
 
-            <div>
-              <Image src={menuIcon} alt="Menu Icon" />
-            </div>
+            {/* Mobile Nav */}
           </header>
         </nav>
 

@@ -4,6 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 
+.nav-link-cont{
+  background: rgba(84, 48, 14, 0.58);
+  backdrop-filter: blur(17.5px) ;
+ 
+}
+
 h1,h2,h3,h4,h5,h6{
   font-family: 'Playfair Display';
   color: #404040;
@@ -17,7 +23,7 @@ font-family: 'Lora', serif;
 }
 
 header{
-  background: rgba(84, 48, 14, 0.2);
+  background: rgba(84, 48, 14, 0.352);
 backdrop-filter: blur(17.5px);
 }
 .section-heading{
@@ -125,4 +131,11 @@ color: #AB825D !important;
  .swiper-pagination-bullet-active{
 
 background: #AB825D !important;
+}
+
+
+@media(min-width:1280px){
+  .mobile-nav{
+    display: block !important;
+  }
 }
